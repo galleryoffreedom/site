@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+@font-face {
+  font-family: "Suisse";
+  src: url("../fonts/SuisseIntl-Thin.woff2") format("woff2"),
+    url("../fonts/SuisseIntl-Thin.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background: black;
+  font-family: "Suisse", "Helvetica", sans-serif;
+}
+
+h1 {
+  font-size: 3.75rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app {
+  display: flex;
+  justify-content: space-between;
+  margin: 2.5rem;
+}
