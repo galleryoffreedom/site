@@ -1,1 +1,1 @@
-## Website for the Gallery of Freedom
+## Gallery of Freedom
