@@ -6,8 +6,16 @@
 
 @font-face {
   font-family: "Suisse";
-  src: url("../fonts/SuisseIntl-Thin.woff2") format("woff2"),
-    url("../fonts/SuisseIntl-Thin.woff") format("woff");
+  src: url("../fonts/SuisseIntl-Light.woff2") format("woff2"),
+    url("../fonts/SuisseIntl-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SuisseBold";
+  src: url("../fonts/SuisseIntl-Bold.woff2") format("woff2"),
+    url("../fonts/SuisseIntl-Bold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
