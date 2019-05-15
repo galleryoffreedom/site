@@ -6,6 +6,6 @@ const preferDefault = m => m && m.default || m
 
 exports.components = {
   "component---cache-dev-404-page-js": hot(preferDefault(require("/Users/ryanluu/Dropbox/src/site/.cache/dev-404-page.js"))),
-  "component---src-pages-index-js": hot(preferDefault(require("/Users/ryanluu/Dropbox/src/site/src/pages/index.js")))
+  "component---src-pages-index-jsx": hot(preferDefault(require("/Users/ryanluu/Dropbox/src/site/src/pages/index.jsx")))
 }
 
