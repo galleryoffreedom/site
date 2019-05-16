@@ -2,14 +2,16 @@
 
 ## Running Build locally
 
-Clone this repo and then run the following commands in git
+Clone this repo and then run the following commands in git:
 
 ```
 npm install
 gatsby develop
 ```
 
-Then visit `localhost:8000` in your browser
+Then visit `localhost:8000` in your browser.
+
+<sub>_Built with gatsby and based on this [template](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-hello-world/)_</sub>
 
 ## Email Capture
 
