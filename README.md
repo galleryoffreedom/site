@@ -2,7 +2,7 @@
 
 ## Running Build locally
 
-Clone **this** repo and then run the following commands in git
+Clone this repo and then run the following commands in git
 
 ```
 npm install
