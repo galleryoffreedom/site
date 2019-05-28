@@ -1,7 +1,6 @@
 * {
   padding: 0;
   margin: 0;
-  color: white;
 }
 
 @font-face {
@@ -21,7 +20,6 @@
 }
 
 body {
-  background: black;
   font-family: "Suisse", "Helvetica", sans-serif;
 }
 
@@ -35,10 +33,14 @@ h4 {
 
 a {
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .app {
   display: flex;
-  justify-content: space-between;
-  margin: 2.5rem;
+  margin: 1.5rem;
+  max-width: 32rem;
 }

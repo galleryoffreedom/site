@@ -1,21 +1,13 @@
 .hero {
   display: inline-block;
-  max-height: calc(100vh - 15.88rem);
-  max-width: 48rem;
-  overflow: scroll;
-  padding-bottom: 2rem;
-
-  h1 {
-    margin-bottom: 0.5rem;
-  }
 }
 
-.link {
-  font-family: "SuisseBold", Helvetica, sans-serif;
+p {
+  margin: 1rem 0;
 }
 
-.spacer {
-  display: block;
-  height: 4rem;
-  width: auto;
+span {
+  display: inline-block;
+  height: 0.25rem;
+  width: 0.25rem;
 }

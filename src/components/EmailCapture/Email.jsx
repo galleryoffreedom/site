@@ -7,16 +7,15 @@ export default class Email extends React.Component {
     this.state = {
       value: ""
     };
-    this.onChange = this.onChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  onChange(event) {
+  handleChange(event) {
     this.setState({ value: event.target.value });
   }
   render() {
     return (
       <div className="email-container">
-        <h4 className="email-cta">Get notified about virtual tours.</h4>
         <div id="mc_embed_signup">
           <form
             action="https://galleryoffreedom.us20.list-manage.com/subscribe/post?u=2b4c8bfb55ef732df9b7bb6dc&amp;id=ff6c90c473"
@@ -27,23 +26,19 @@ export default class Email extends React.Component {
             target="_blank"
           >
             <div id="mc_embed_signup_scroll">
-              <h2>Subscribe</h2>
-              <div className="indicates-required">
-                <span className="asterisk">*</span> indicates required
-              </div>
-              <div className="mc-field-group">
-                <label htmlFor="mce-EMAIL">
-                  Email Address <span className="asterisk">*</span>
-                </label>
+              <div className="mc-field-group form-input">
+                <label htmlFor="mce-EMAIL">To:</label>
                 <input
                   type="email"
-                  value=""
+                  value={this.state.value}
                   name="EMAIL"
+                  placeholder="Enter your email here"
                   className="required email"
                   id="mce-EMAIL"
+                  onChange={this.handleChange}
                 />
               </div>
-              <div id="mce-responses" className="clear">
+              <div id="mce-responses" className="form-hidden">
                 <div
                   className="response"
                   id="mce-error-response"
@@ -65,10 +60,10 @@ export default class Email extends React.Component {
                   tabIndex="-1"
                 />
               </div>
-              <div className="clear">
+              <div className="form-input">
                 <input
                   type="submit"
-                  value="Subscribe"
+                  value="Send"
                   name="subscribe"
                   id="mc-embedded-subscribe"
                   className="button"
