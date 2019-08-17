@@ -1,79 +1,73 @@
 import React from "react";
 import "./hero.scss";
+import Video from "./video/GoF-Strolling.mp4";
 import Email from "../EmailCapture/Email.jsx";
-var date = new Date().getDate();
+import { findDOMNode } from "react-dom";
+import $ from "jquery";
 
 export default class Hero extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      //defauilt value of the date time
-      date: ""
-    };
+    this.state = {};
+    this._handleScroll = this._handleScroll.bind(this);
   }
   componentDidMount() {
-    var that = this;
-    var date = new Date().getDate(); //Current Date
-    var month = new Date().getMonth() + 1; //Current Month
-    var year = new Date().getFullYear().toString(); //Current Year
-    var yrSlice = year.slice(2);
-    that.setState({
-      //Setting the value of the date time
-      date: month + "/" + date + "/" + yrSlice
-    });
+    this._handleScroll();
+  }
+
+  _handleScroll() {
+    // select video element
+    var vid = document.getElementById("v0");
+    var time = $("#time");
+    var scroll = $("#scroll");
+    var windowheight = $(window).height() - 20;
+
+    var scrollpos = window.pageYOffset / 400;
+    var targetscrollpos = scrollpos;
+    var accel = 0;
+
+    // ---- Values you can tweak: ----
+    var accelamount = 0.2; //How fast the video will try to catch up with the target position. 1 = instantaneous, 0 = do nothing.
+
+    // pause video on load
+    vid.pause();
+
+    window.onscroll = function() {
+      //Set the video position that we want to end up at:
+      targetscrollpos = window.pageYOffset / 400;
+
+      //move the red dot to a position across the side of the screen
+      //that indicates how far we've scrolled.
+      scroll.css("top", 10 + (window.pageYOffset / 13500) * windowheight);
+    };
+
+    setInterval(function() {
+      //Accelerate towards the target:
+      scrollpos += (targetscrollpos - scrollpos) * accelamount;
+
+      //move the blue dot to a position across the side of the screen
+      //that indicates where the current video scroll pos is.
+      time.css("top", 10 + (scrollpos / 13500) * 400 * windowheight);
+
+      //update video playback
+      vid.currentTime = scrollpos;
+      vid.pause();
+    }, 30);
   }
 
   render() {
     return (
       <div className="hero">
-        <p>
-          "Gallery of Freedom" &#60;mail&#64;galleryoffreedom.com&#62; on{" "}
-          {this.state.date}
-        </p>
-        <Email />
-        <p>Subject: A message from the creators</p>
-        <p>Hey there,</p>
-        <p>
-          Gallery of Freedom, GoF for short, is a new art organization based in
-          virtual reality that curates VR artworks from artists working with
-          tools such as Quill, Tilt Brush, Oculus Medium, Google Blocks, and
-          more. This project started as a place to view VR artwork and connect
-          with others, but has quickly grown into a community of artists and
-          enthusiasts.
-        </p>
-        <p>
-          The gallery is currently in closed beta. If you'd like to schedule a
-          tour, just enter your email above or reach out.
-        </p>
-        <p>
-          If you're interested you can join our
-          <span />
-          <a href="https://discord.gg/ad8wSEZ" className="link">
-            Discord
-          </a>
-          . You can also get updates and follow the project on
-          <span />
-          <a
-            href="https://www.instagram.com/galleryoffreedom/"
-            className="link"
-          >
-            Instagram
-          </a>
-          <span />
-          and
-          <span />
-          <a href="https://twitter.com/galleryfreedom" className="link">
-            Twitter
-          </a>
-          .
-        </p>
-        <p>See you soon :)</p>
-        <p>- Team</p>
-        <p>
-          *PS: special thanks to our contributors "Brendan", "Litpanda",
-          "Milan", "Micah.404", "Daniel Peixe", "Sneekypops", "Funilab", "Felix
-          Stief", "Gianpaolo Gonzalez", "Edward Madojem"{" "}
-        </p>
+        <div id="set-height" />
+        <div id="scroll" />
+        <div id="time" />
+        <video id="v0" tabIndex="0" autobuffer="autobuffer" preload="preload">
+          <source
+            type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+            src={Video}
+          />
+          <p>Sorry, your browser does not support the &lt;video&gt; element.</p>
+        </video>
       </div>
     );
   }
