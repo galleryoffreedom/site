@@ -63,8 +63,12 @@ export default class Hero extends React.Component {
         <div id="time" />
         <video id="v0" tabIndex="0" autobuffer="autobuffer" preload="preload">
           <source
+            type='video/ogg; codecs="theora, vorbis"'
+            src="https://www.html5rocks.com/tutorials/video/basics/Chrome_ImF.ogv"
+          />
+          <source
             type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-            src={Video}
+            src="https://www.html5rocks.com/tutorials/video/basics/Chrome_ImF.mp4"
           />
           <p>Sorry, your browser does not support the &lt;video&gt; element.</p>
         </video>
