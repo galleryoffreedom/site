@@ -40,7 +40,6 @@ a {
 }
 
 .app {
-  display: flex;
-  margin: 1.5rem;
-  max-width: 32rem;
+  position: relative;
+  width: 100vw;
 }

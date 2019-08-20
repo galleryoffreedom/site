@@ -1,5 +1,21 @@
 .hero {
-  display: inline-block;
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  position: relative;
+
+  .video-holder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    #v0 {
+      height: 100vh;
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%);
+    }
+  }
 }
 
 p {
@@ -16,12 +32,7 @@ span {
   display: block;
   height: 13500px;
 }
-#v0 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-}
+
 p font-family helvetica {
   font-size: 24px;
 }
