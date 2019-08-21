@@ -1,1 +1,32 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><script src="/socket.io/socket.io.js"></script></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"></div><script src="/commons.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charSet="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <noscript id="gatsby-noscript"
+      >This app works best with JavaScript enabled.</noscript
+    >
+    <div id="___gatsby"></div>
+    <script src="/commons.js"></script>
+    <script>
+      var _tsu =
+        window.innerWidth < 600
+          ? "https://www.washingtonpost.com/wp-stat/graphics/2019/national/bears-ears/castle_butte_with_silence_mobile.mp4"
+          : "https://www.washingtonpost.com/wp-stat/graphics/2019/national/bears-ears/castle_butte_with_silence_q12.mp4";
+
+      // video
+      var _tv = document.getElementById("video-scroll-element");
+      var _tvs = document.createElement("source");
+      _tvs.setAttribute("src", _tsu);
+      _tvs.setAttribute("type", "video/mp4");
+      _tv.appendChild(_tvs);
+    </script>
+  </body>
+</html>

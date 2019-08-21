@@ -17,7 +17,7 @@ export default class Hero extends React.Component {
 
   _handleScroll() {
     // select video element
-    var vid = document.getElementById("v0");
+    var vid = document.getElementById("video-scroll-element");
     var time = $("#time");
     var scroll = $("#scroll");
     var windowheight = $(window).height() - 20;
@@ -62,7 +62,12 @@ export default class Hero extends React.Component {
         <div id="scroll" />
         <div id="time" />
         <div className="video-holder">
-          <video id="v0" tabIndex="0" autobuffer="autobuffer" preload="preload">
+          <video
+            id="video-scroll-element"
+            tabIndex="0"
+            autobuffer="autobuffer"
+            preload="preload"
+          >
             <source
               type='video/webm; codecs="vp8, vorbis"'
               src="http://www.html5rocks.com/tutorials/video/basics/Chrome_ImF.webm"
