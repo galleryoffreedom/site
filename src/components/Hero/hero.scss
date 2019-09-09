@@ -1,13 +1,32 @@
 .hero {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 2px solid black;
+  max-width: 45rem;
+  text-align: left;
+  width: 50%;
+
+  h1 {
+    font-size: 9.75rem;
+    margin: 3.5rem 3.5rem 1.5rem 3.5rem;
+  }
+
+  .cta-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    button{
+      padding: 1.25rem;
+      margin: 0.5rem 1rem;
+
+      &.community{
+        margin: 0.5rem 1rem 1rem 1rem;
+      }
+    }
+  }
 }
 
-p {
-  margin: 1rem 0;
-}
 
-span {
-  display: inline-block;
-  height: 0.25rem;
-  width: 0.25rem;
-}
+

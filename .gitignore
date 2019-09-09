@@ -1,4 +1,4 @@
 node_modules/
 .sass-cache/
-public/stylesheets/*.css
-public/min/*.js
+.cache/
+public/
